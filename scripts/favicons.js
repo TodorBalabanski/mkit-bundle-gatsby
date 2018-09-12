@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const {
   siteMetadata: {
-    siteTitleShort, themeColor, backgroundColor, logo
+    siteTitleShort, siteIcon, themeColor, backgroundColor
   }
 } = require('../gatsby-config');
 
@@ -13,7 +13,8 @@ if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
 }
 
-const source = logo;
+const source = siteIcon;
+
 const configuration = {
   path: '/icons/',
   appName: siteTitleShort,
