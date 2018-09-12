@@ -28,9 +28,9 @@ const Head = ({
   pageTitle,
   pageTitleFull = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle,
   pageKeywords,
+  pageImage,
   themeColor,
   social,
-  imageUrl,
   pathname,
   canonical = siteUrl + (pathname || '')
 }) => (
@@ -66,15 +66,12 @@ const Head = ({
     <meta content={canonical} name="twitter:url" />
     <link rel="canonical" href={canonical} />
 
-    <meta content={imageUrl || `${siteUrl}/social.png`} property="og:image" />
+    <meta content={pageImage} property="og:image" />
     <meta content="1024" property="og:image:width" />
     <meta content="512" property="og:image:height" />
-    <meta content={imageUrl || `${siteUrl}/social.png`} name="twitter:image" />
+    <meta content={pageImage} name="twitter:image" />
     <meta content="1024" name="twitter:image:width" />
     <meta content="512" name="twitter:image:height" />
-    <meta content={imageUrl || `${siteUrl}/social.png`} property="og:image" />
-    <meta content="1024" property="og:image:width" />
-    <meta content="512" property="og:image:height" />
 
     <meta content={themeColor} name="msapplication-TileColor" />
     <meta content="/icons/mstile-70x70.png" name="msapplication-square70x70" />
@@ -121,9 +118,9 @@ Head.propTypes = {
   pageTitle: PropTypes.string.isRequired,
   pageTitleFull: PropTypes.string.isRequired,
   pageKeywords: PropTypes.string.isRequired,
+  pageImage: PropTypes.string.isRequired,
   themeColor: PropTypes.string.isRequired,
   social: PropTypes.objectOf(PropTypes.string).isRequired,
-  imageUrl: PropTypes.string.isRequired,
   pathname: PropTypes.string.isRequired,
   canonical: PropTypes.string.isRequired
 };
