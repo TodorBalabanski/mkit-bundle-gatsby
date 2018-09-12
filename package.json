@@ -1,0 +1,66 @@
+{
+  "name": "mkit-bundle-gatsby",
+  "version": "1.0.0",
+  "description": "Micro Gatsby project bundle",
+  "keywords": [
+    "mkit",
+    "bundle",
+    "micro",
+    "Gatsby",
+    "web",
+    "project",
+    "boilerplate",
+    "template",
+    "starter"
+  ],
+  "scripts": {
+    "lint": "eslint --fix src/**/*.js && prettier --write src/**/*.{js,json,md}",
+    "precommit": "lint-staged",
+    "develop": "gatsby develop",
+    "build:favicons": "node scripts/favicons",
+    "build:gatsby": "gatsby build",
+    "build": "npm run build:favicons && npm run build:gatsby",
+    "serve": "gatsby serve"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "favicons": "^5.1.1",
+    "gatsby": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-offline": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.14.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2"
+  },
+  "author": "MK IT Ltd. <hi@mkit.io>",
+  "homepage": "https://github.com/mkitio/mkit-bundle-gatsby#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkitio/mkit-bundle-gatsby.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkitio/mkit-bundle-gatsby/issues"
+  },
+  "license": "MIT"
+}

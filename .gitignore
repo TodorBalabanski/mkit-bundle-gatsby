@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules
+.cache
+
+# Editors
+.idea
+.vscode
+
+# Build
+public
+
+# Misc
+.DS_Store
+TODO.md
