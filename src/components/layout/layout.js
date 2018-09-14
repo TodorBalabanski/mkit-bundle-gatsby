@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Head from '../head/head';
+import Seo from '../seo/seo';
 
 const Layout = ({ children }) => (
   <React.Fragment>
-    <Head />
+    <Seo />
     {/* Header component goes here */}
     <div>{children}</div>
     {/* Footer component goes here */}

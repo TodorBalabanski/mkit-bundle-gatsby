@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout/layout';
-import Head from '../components/head/head';
+import Seo from '../components/seo/seo';
 
 const seo = {
   siteDescription: 'This is an shocking description for the test page',
@@ -12,7 +12,7 @@ const seo = {
 
 const SecondPage = () => (
   <Layout>
-    <Head {...seo} />
+    <Seo {...seo} />
     <h1>Test Page</h1>
     <Link to="/">Go to page Index</Link>
   </Layout>
