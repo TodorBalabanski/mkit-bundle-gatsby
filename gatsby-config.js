@@ -27,7 +27,6 @@ module.exports = {
     }
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -40,6 +39,9 @@ module.exports = {
         icon: ICON // This path is relative to the root of the site.
       }
     },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-offline'
   ]
 };
