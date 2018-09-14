@@ -10,8 +10,9 @@ const query = graphql`
       siteMetadata {
         siteTitle
         siteUrl
+        siteDescription
+        siteKeywords
         siteThemeColor
-        pageDescription
         social {
           twitter
           fbAppId
@@ -22,17 +23,15 @@ const query = graphql`
 `;
 
 const Seo = ({
-  siteTitle,
-  siteUrl,
-  siteThemeColor,
-  pageTitle,
-  pageDescription,
-  pageKeywords,
-  pageImage = '/images/social.png',
-  social,
-  pathname
+  pageTitle, pageDescription, pageKeywords, pageImage, pathname, config
 }) => {
+  const {
+    siteTitle, siteUrl, siteDescription, siteKeywords, siteThemeColor, social
+  } = config;
   const pageTitleFull = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+  const pageDescriptionFull = pageDescription || siteDescription;
+  const pageKeywordsFull = pageKeywords || siteKeywords;
+  const pageImageFull = pageImage || '/images/social.png';
   const canonical = siteUrl + (pathname || '');
 
   return (
@@ -47,10 +46,10 @@ const Seo = ({
       <meta content={pageTitleFull} name="twitter:title" />
       <title>{pageTitleFull}</title>
 
-      <meta content={pageKeywords} name="keywords" />
-      <meta content={pageDescription} name="description" />
-      <meta content={pageDescription} property="og:description" />
-      <meta content={pageDescription} name="twitter:description" />
+      <meta content={pageKeywordsFull} name="keywords" />
+      <meta content={pageDescriptionFull} name="description" />
+      <meta content={pageDescriptionFull} property="og:description" />
+      <meta content={pageDescriptionFull} name="twitter:description" />
 
       <meta content="yes" name="apple-mobile-web-app-capable" />
       <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
@@ -68,10 +67,10 @@ const Seo = ({
       <meta content={canonical} name="twitter:url" />
       <link rel="canonical" href={canonical} />
 
-      <meta content={pageImage} property="og:image" />
+      <meta content={pageImageFull} property="og:image" />
       <meta content="1024" property="og:image:width" />
       <meta content="512" property="og:image:height" />
-      <meta content={pageImage} name="twitter:image" />
+      <meta content={pageImageFull} name="twitter:image" />
       <meta content="1024" name="twitter:image:width" />
       <meta content="512" name="twitter:image:height" />
 
@@ -120,19 +119,26 @@ const Seo = ({
 };
 
 Seo.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
-  siteUrl: PropTypes.string.isRequired,
-  siteThemeColor: PropTypes.string.isRequired,
   pageTitle: PropTypes.string.isRequired,
   pageDescription: PropTypes.string.isRequired,
   pageKeywords: PropTypes.string.isRequired,
   pageImage: PropTypes.string.isRequired,
-  social: PropTypes.objectOf(PropTypes.string).isRequired,
-  pathname: PropTypes.string.isRequired
+  pathname: PropTypes.string.isRequired,
+  config: PropTypes.shape({
+    siteTitle: PropTypes.string.isRequired,
+    siteUrl: PropTypes.string.isRequired,
+    siteDescription: PropTypes.string.isRequired,
+    siteKeywords: PropTypes.string.isRequired,
+    siteThemeColor: PropTypes.string.isRequired,
+    social: PropTypes.shape({
+      twitter: PropTypes.string.isRequired,
+      fbAppId: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
 
 const withStaticQuery = props => (
-  <StaticQuery query={query} render={data => <Seo {...data.site.siteMetadata} {...props} />} />
+  <StaticQuery query={query} render={data => <Seo config={data.site.siteMetadata} {...props} />} />
 );
 
 export default withStaticQuery;

@@ -3,10 +3,10 @@ const path = require('path');
 // SEO configuration
 const siteTitle = 'MK IT Bundle Gatsby';
 const siteUrl = 'https://github.com/mkitio/mkit-bundle-gatsby';
+const siteDescription = 'Micro Gatsby project bundle';
+const siteKeywords = 'mkit, bundle, micro, Gatsby, web, project, boilerplate, template, starter';
 const siteThemeColor = '#009688';
 
-const defaultDescription = 'Micro Gatsby project bundle';
-const defaultKeywords = 'mkit, bundle, micro, Gatsby, web, project, boilerplate, template, starter';
 
 // Accounts & API keys
 const twitter = 'your-twitter-account';
@@ -24,9 +24,9 @@ module.exports = {
     // SEO
     siteTitle,
     siteUrl,
+    siteDescription,
+    siteKeywords,
     siteThemeColor,
-    pageDescription: defaultDescription,
-    pageKeywords: defaultKeywords,
     social: {
       twitter,
       fbAppId
