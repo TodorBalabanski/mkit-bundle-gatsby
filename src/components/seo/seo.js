@@ -28,7 +28,7 @@ const Seo = ({
   pageTitle,
   pageTitleFull = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle,
   pageKeywords,
-  pageImage,
+  pageImage = '/images/social.png',
   themeColor,
   social,
   pathname,

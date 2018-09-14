@@ -6,7 +6,7 @@ const DESCRIPTION = 'Micro Gatsby project bundle';
 const URL = 'https://github.com/mkitio/mkit-bundle-gatsby';
 const THEME_COLOR = '#009688';
 const BACKGROUND_COLOR = '#009688';
-const ICON = 'src/images/icon.png'; // used for manifest and favicon
+const ICON = 'static/images/icon.png'; // used for manifest and favicon
 const TWITTER_ACCOUNT = 'your-twitter-account';
 const FB_APP_ID = 'your-fb-app-id';
 
@@ -42,6 +42,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-webpack-size'
   ]
 };
