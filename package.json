@@ -35,6 +35,7 @@
   "dependencies": {
     "favicons": "^5.1.1",
     "gatsby": "next",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-react-helmet": "next",

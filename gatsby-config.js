@@ -1,5 +1,6 @@
 const path = require('path');
 
+// Project configuration
 const TITLE = 'MK IT Bundle Gatsby';
 const SHORT_TITLE = 'BundleGatsby';
 const DESCRIPTION = 'Micro Gatsby project bundle';
@@ -9,9 +10,9 @@ const BACKGROUND_COLOR = '#009688';
 const ICON = 'static/images/icon.png'; // used for manifest and favicon
 const TWITTER_ACCOUNT = 'your-twitter-account';
 const FB_APP_ID = 'your-fb-app-id';
+const GA_ID = 'your-ga-id';
 
-// Do not modify!
-// Every value that should be modified is exported above as constant;
+// Do not modify unless you know what you're doing
 module.exports = {
   siteMetadata: {
     siteTitle: TITLE,
@@ -27,6 +28,13 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: GA_ID,
+        head: false // put GA in the <head> for optimal tracking
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
