@@ -1,50 +1,59 @@
 const path = require('path');
 
-// Project configuration
-const TITLE = 'MK IT Bundle Gatsby';
-const SHORT_TITLE = 'BundleGatsby';
-const DESCRIPTION = 'Micro Gatsby project bundle';
-const URL = 'https://github.com/mkitio/mkit-bundle-gatsby';
-const THEME_COLOR = '#009688';
-const BACKGROUND_COLOR = '#009688';
-const ICON = 'static/images/icon.png'; // used for manifest and favicon
-const TWITTER_ACCOUNT = 'your-twitter-account';
-const FB_APP_ID = 'your-fb-app-id';
-const GA_ID = 'your-ga-id';
+// SEO configuration
+const siteTitle = 'MK IT Bundle Gatsby';
+const siteUrl = 'https://github.com/mkitio/mkit-bundle-gatsby';
+const siteThemeColor = '#009688';
+
+const defaultDescription = 'Micro Gatsby project bundle';
+const defaultKeywords = 'mkit, bundle, micro, Gatsby, web, project, boilerplate, template, starter';
+
+// Accounts & API keys
+const twitter = 'your-twitter-account';
+const fbAppId = 'your-fb-app-id';
+const gaId = 'your-ga-id';
+
+// Used internally
+const utilsTitleShort = 'BundleGatsby';
+const utilsIcon = 'static/images/icon.png';
+const utilsBackgroundColor = '#009688';
 
 // Do not modify unless you know what you're doing
 module.exports = {
   siteMetadata: {
-    siteTitle: TITLE,
-    siteTitleShort: SHORT_TITLE,
-    siteDescription: DESCRIPTION,
-    siteUrl: URL,
-    siteIcon: path.resolve(__dirname, ICON),
-    themeColor: THEME_COLOR,
-    backgroundColor: BACKGROUND_COLOR,
+    // SEO
+    siteTitle,
+    siteUrl,
+    siteThemeColor,
+    pageDescription: defaultDescription,
+    pageKeywords: defaultKeywords,
     social: {
-      twitter: TWITTER_ACCOUNT,
-      fbAppId: FB_APP_ID
-    }
+      twitter,
+      fbAppId
+    },
+    // Utils
+    utilsTitleShort,
+    utilsIcon: path.resolve(__dirname, utilsIcon),
+    utilsBackgroundColor
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: GA_ID,
+        trackingId: gaId,
         head: false // put GA in the <head> for optimal tracking
       }
     },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: TITLE,
-        short_name: SHORT_TITLE,
+        name: siteTitle,
+        short_name: utilsTitleShort,
         start_url: '/',
-        theme_color: THEME_COLOR,
-        background_color: BACKGROUND_COLOR,
+        theme_color: siteThemeColor,
+        background_color: utilsBackgroundColor,
         display: 'minimal-ui',
-        icon: ICON // This path is relative to the root of the site.
+        icon: utilsIcon // This path is relative to the root of the site.
       }
     },
     'gatsby-plugin-react-helmet',
