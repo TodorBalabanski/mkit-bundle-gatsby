@@ -4,7 +4,7 @@
 
 _Slightly opinionated_ [GatsbyJS v2](https://www.next.gatsbyjs.org/) starter template supporting various best practices.
 
-[GatsbyJS](https://www.gatsbyjs.org) and its [Starters](https://www.gatsbyjs.org/docs/gatsby-starters/) offer outstanding features. However, there are some essential components we identify as a must-have for every project. Shared layout, full-blown SEO, static assets, favicon generation, (es)lint, pre-commit hooks... **Say No More!** 
+[GatsbyJS](https://www.gatsbyjs.org) and its [Starters](https://www.gatsbyjs.org/docs/gatsby-starters/) offer outstanding features. However, there are some essential components we identify as a must-have for every project. Shared layout, full-blown SEO, static assets, favicon generation, (es)lint, pre-commit hooks... **Say No More!**
 
 **Bug reports and PRs are more than welcome!**
 
@@ -14,38 +14,41 @@ This project strives to deliver clean folder structure and satisfying developmen
 
 **Single source of truth configuration.** As simple as editing a few constants in a single file and you're all set to start writing `your own code!`
 
-There are many starter projects out there, but we felt they were all too tightly coupled to their domain of usage, e.g. blogs, landing pages, e-commerce, etc. This boilerplate will get you exactly to the point where you can start your own journey. The production-ready skeleton for modern web apps.
+There are many starter projects out there, but we felt they were all too tightly coupled to their domain of usage, e.g. blogs, landing pages, e-commerce, etc.
+
+**This boilerplate will get you exactly to the point where you can start your own journey. The production-ready skeleton for modern web apps.**
 
 ## Features
 
-- [X] :rocket: **Latest JS Support**
+- [x] :rocket: **Latest JS Support**
 - [x] :gem: **ReactJS & PropTypes Validation**
 - [x] :mag_right: **SEO Reusable Component**
 - [x] :chart_with_upwards_trend: **[Google Analytics](https://analytics.google.com/) Integration**
 - [x] :100: **[Google Lighthouse 100/100 Score](https://developers.google.com/web/tools/lighthouse/)**
 - [x] :airplane: **Offline Support**
 - [x] :wrench: **Single Source Of Truth Configuration**
-- [X] :zap: **ESlint, Prettier, EditorConfig**
-- [X] :open_file_folder: **Clean folder Structure**
-- [X] :rocket: **Production Build**
+- [x] :zap: **ESlint, Prettier, EditorConfig**
+- [x] :open_file_folder: **Clean folder Structure**
+- [x] :rocket: **Production Build**
 - [x] :star: **Automated Favicon Generation**
 - [x] :scroll: **Automated Manifest Support**
 - [x] :globe_with_meridians: **Automated Sitemap Support**
 - [x] :robot: **Automated Robots.txt Support**
 - [x] :herb: **Automated Structured Data Support (JSON-LD)**
-- [X] :elephant: **[`size-plugin`](https://github.com/GoogleChromeLabs/size-plugin) For Production Bundle Inspection**
-- [X] :construction_worker: **`npm run` All The Things**
-- [X] :vertical_traffic_light: **Pre-commit Hooks**
+- [x] :elephant: **[`size-plugin`](https://github.com/GoogleChromeLabs/size-plugin) For Production Bundle Inspection**
+- [x] :construction_worker: **`npm run` All The Things**
+- [x] :vertical_traffic_light: **Pre-commit Hooks**
 
 #### Gatsby-Specific Components
+
 - [x] :cyclone: **Reusable Layout Component**
-- [x] :tophat: **HOC-like \<StaticQuery> Usage, i.e. `withStaticQuery()`**
+- [x] :tophat: **HOC-like `<StaticQuery />` Usage, i.e. `withStaticQuery()`**
 
 ## Getting Started
 
 ### Automagically...
 
-This whole project can be installed automagically using [our smart tool](https://github.com/mkitio/mkit-bundler). 
+This whole project can be installed automagically using [our smart tool](https://github.com/mkitio/mkit-bundler).
 
 1. Visit [`mkit-bundler`](https://github.com/mkitio/mkit-bundler)
 
@@ -53,7 +56,7 @@ This whole project can be installed automagically using [our smart tool](https:/
 
 _Don't worry, these instructions will be present there too!_
 
-### or using Gatsby CLI
+### or using [Gatsby's CLI](https://www.gatsbyjs.org/docs/)
 
 WIP
 
@@ -62,11 +65,13 @@ WIP
 These simple steps will get you a copy of the project, make it your own and let you start hacking right away!
 
 1. Clone the repository
+
 ```
 git clone https://github.com/mkitio/mkit-bundle-gatsby.git <your-project-name>
 ```
 
 2. Make it your own
+
 ```
 cd <your-project-name> && rm -rf .git && git init
 
@@ -76,43 +81,46 @@ cd <your-project-name> && rm -rf .git && git init
 ```
 
 3. Install the dependencies
+
 ```
 npm install
 ```
 
 3. Test your installation with production build
+
 ```
 npm run build && npm run serve
 ```
 
 4. Start hacking!
+
 ```
 # code and have fun
 npm run develop
 ```
 
-_When deploying you'd want to just run `npm run build`. Then deploy the generated `/public` folder and its contents._
+_When deploying you'd want to run `npm run build`. Then deploy the generated `/public` folder and its contents._
 
 ### Folder Structure
 
 ```
 .
 ├── scripts                       # Runnable utility scripts
-│   └── favicons.js               # https://www.npmjs.com/package/favicons
+│   └── favicons.js                 # https://www.npmjs.com/package/favicons
 ├── src                           # Source files
-│   ├── components                # React (dumb) components
-│   │   ├── layout                # Layout component for wrapping your pages
-│   │   └── seo                   # Reusable SEO component
-│   ├── pages                     # Pages
-│   │   ├── 404.js                # 404 page
-│   │   ├── index.js              # Index page
-│   │   └── learn-more.js         # Learn-more page (can be deleted)
-│   └── utils                     # Helpers
-│       └── jsonld-generator.js   # JSON-LD generator
+│   ├── components                  # React (dumb) components
+│   │   ├── layout                    # Layout component for wrapping your pages
+│   │   └── seo                       # Reusable SEO component
+│   ├── pages                       # Pages
+│   │   ├── 404.js                    # 404 page
+│   │   ├── index.js                  # Index page
+│   │   └── learn-more.js             # Learn-more page (can be deleted)
+│   └── utils                       # Helpers
+│       └── jsonld-generator.js       # JSON-LD generator
 ├── static                        # Static files served from the root of your domain
-│   └── images                    # Static images
-│       ├── icon.png              # Used to generate static assets automatically
-│       └── social.png            # Used for SEO and Social media meta tags
+│   └── images                      # Static images
+│       ├── icon.png                  # Used to generate static assets automatically
+│       └── social.png                # Used for SEO and Social media meta tags
 ├── README.md
 ├── gatsby-config.js              # Standard gatsby-config.js file extended with more variables
 ├── ...
@@ -136,7 +144,7 @@ npm run build
 # Serve production build
 npm run serve
 
-# Fully optimized production preview
+# Build and run production preview
 npm run build && npm run serve
 ```
 
@@ -145,6 +153,7 @@ npm run build && npm run serve
 This project uses [Semantic Versioning, a.k.a. Semver](https://semver.org/).
 
 Each release is tagged by:
+
 ```
 git tag -a v1.0.0 -m "Release v1.0.0"
 npm publish --tag <tag>
@@ -158,7 +167,7 @@ See also the list of [contributors](https://github.com/mkitio/mkit-bundle-npm-pa
 
 ## Acknowledgments
 
-A hat-tip to Fabian Schultz ([@fschultz_](https://twitter.com/fschultz_))! This project was heavily inspired by his amazing starter [`gatsby-universal`](https://github.com/fabe/gatsby-universal) and hard work! 
+A hat-tip to Fabian Schultz ([@fschultz\_](https://twitter.com/fschultz_))! This project was heavily inspired by his amazing starter [`gatsby-universal`](https://github.com/fabe/gatsby-universal) and hard work!
 
 ## License
 
