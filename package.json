@@ -17,9 +17,10 @@
     "lint": "eslint --fix src/**/*.js && prettier --write src/**/*.{js,json,md}",
     "precommit": "lint-staged",
     "develop": "gatsby develop",
+    "build:dir": "mkdir -p public/icons/",
     "build:favicons": "node scripts/favicons",
     "build:gatsby": "gatsby build",
-    "build": "npm run build:favicons && npm run build:gatsby",
+    "build": "npm run build:dir && npm run build:favicons && npm run build:gatsby",
     "serve": "gatsby serve"
   },
   "lint-staged": {
