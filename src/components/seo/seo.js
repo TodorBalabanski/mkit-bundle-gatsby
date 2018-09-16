@@ -22,12 +22,8 @@ const query = graphql`
   }
 `;
 
-const Seo = ({
-  pageTitle, pageDescription, pageKeywords, pageImage, pathname, config
-}) => {
-  const {
-    siteTitle, siteUrl, siteDescription, siteKeywords, siteThemeColor, social
-  } = config;
+const Seo = ({ pageTitle, pageDescription, pageKeywords, pageImage, pathname, config }) => {
+  const { siteTitle, siteUrl, siteDescription, siteKeywords, siteThemeColor, social } = config;
   const pageTitleFull = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
   const pageDescriptionFull = pageDescription || siteDescription;
   const pageKeywordsFull = pageKeywords || siteKeywords;

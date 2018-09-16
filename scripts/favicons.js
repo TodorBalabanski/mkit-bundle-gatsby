@@ -4,7 +4,10 @@ const fs = require('fs');
 
 const {
   siteMetadata: {
-    utilsTitleShort, utilsIcon, utilsBackgroundColor, siteThemeColor
+    utilsTitleShort,
+    utilsIcon,
+    utilsBackgroundColor,
+    siteThemeColor
   }
 } = require('../gatsby-config');
 
@@ -48,20 +51,28 @@ const callback = (err, res) => {
     return;
   }
 
-  res.images.forEach((image) => {
-    fs.writeFile(path.resolve(__dirname, '../public/icons/', image.name), image.contents, (err) => {
-      if (err) {
-        console.log(err);
+  res.images.forEach(image => {
+    fs.writeFile(
+      path.resolve(__dirname, '../public/icons/', image.name),
+      image.contents,
+      imgErr => {
+        if (imgErr) {
+          console.log(imgErr);
+        }
       }
-    });
+    );
   });
 
-  res.files.forEach((file) => {
-    fs.writeFile(path.resolve(__dirname, '../public/', file.name), file.contents, (err) => {
-      if (err) {
-        console.log(err);
+  res.files.forEach(file => {
+    fs.writeFile(
+      path.resolve(__dirname, '../public/', file.name),
+      file.contents,
+      fileErr => {
+        if (fileErr) {
+          console.log(fileErr);
+        }
       }
-    });
+    );
   });
 };
 

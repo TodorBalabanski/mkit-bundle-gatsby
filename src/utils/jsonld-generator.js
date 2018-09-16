@@ -1,9 +1,7 @@
 // This does not support nested pages (level 2 and up)
 // If you're working with deeply nested pages, remove this or rework it.
 
-export default ({
-  pathname, canonical, siteUrl, pageTitle, siteTitle, pageTitleFull
-}) => {
+export default ({ pathname, canonical, siteUrl, pageTitle, siteTitle, pageTitleFull }) => {
   const isSubPage = pageTitle && pathname !== '/';
 
   const schema = [

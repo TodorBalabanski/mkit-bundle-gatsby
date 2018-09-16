@@ -11,7 +11,19 @@ const seo = {
 const IndexPage = ({ location }) => (
   <Layout>
     <Seo {...seo} pathname={location.pathname} />
-    <h1>Index Page</h1>
+    <h1>Hi there!</h1>
+    <h3>
+      Welcome to the{' '}
+      <a href="https://github.com/mkitio/mkit-bundle-gatsby">
+        mkit-bundle-gatsby
+      </a>{' '}
+      template
+    </h3>
+    <p>
+      This project strives to deliver clean folder structure and satisfying
+      development experience. <strong>Easy.</strong>
+    </p>
+    <p>You are all set to start your own project!</p>
     <Link to="/learn-more">Learn More</Link>
   </Layout>
 );

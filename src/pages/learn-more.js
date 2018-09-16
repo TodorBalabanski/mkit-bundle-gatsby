@@ -8,12 +8,17 @@ const seo = {
   pageTitle: 'Learn More'
 };
 
-const MorePage = ({ location }) => (
+const LearnMore = ({ location }) => (
   <Layout>
     <Seo {...seo} pathname={location.pathname} />
-    <h1>Learn More Page</h1>
-    <Link to="/">Index</Link>
+    <h1>Looks like you made it!</h1>
+    <p>
+      This is just an empty page, but you can check <strong>README.md</strong>{' '}
+      for some tips & tricks.
+    </p>
+    <p>Happy Hacking!</p>
+    <Link to="/">Back to Index</Link>
   </Layout>
 );
 
-export default MorePage;
+export default LearnMore;
