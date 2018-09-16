@@ -64,6 +64,8 @@ WIP
 
 These simple steps will get you a copy of the project, make it your own and let you start hacking right away!
 
+:warning: _If you face any `npm` errors try the same steps with [Yarn](https://yarnpkg.com/)._
+
 1. Clone the repository
 
 ```
